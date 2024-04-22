@@ -1,0 +1,529 @@
+<html>
+   <meta charset=utf-8>
+   <meta content="width=device-width, initial-scale=1.0" name=viewport>
+   <script src="https://cdn.jsdelivr.net/gh/ireade/caniuse-embed/caniuse-embed.min.js"></script>
+   <script src=https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js></script>
+   <script src=https://code.jquery.com/jquery-1.9.1.js></script> 
+   <script src=https://code.jquery.com/ui/1.11.0/jquery-ui.js></script> 
+   <style>
+      /* Style the header */
+      header {
+      background-color: white;
+      padding: 30px;
+      text-align: center;
+      font-size: 35px;
+      }
+      /* Media Queries */
+      /* Card sizing */
+      /* Colors */
+      /* Calculations */
+      /* Placeholders */
+      @media (min-width: 1000px) {
+      #timeline .demo-card:nth-child(odd) .head::after, #timeline .demo-card:nth-child(even) .head::after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      }
+      #timeline .demo-card:nth-child(odd) .head::before, #timeline .demo-card:nth-child(even) .head::before {
+      position: absolute;
+      content: "";
+      width: 9px;
+      height: 9px;
+      background-color: #bdbdbd;
+      border-radius: 9px;
+      box-shadow: 0px 0px 2px 8px #f7f7f7;
+      }
+      }
+      /* Some Cool Stuff */
+.demo-card:nth-child(1) {
+  order: 1;
+}
+.demo-card:nth-child(2) {
+  order: 5;
+}
+.demo-card:nth-child(3) {
+  order: 2;
+}
+.demo-card:nth-child(4) {
+  order: 6;
+}
+.demo-card:nth-child(5) {
+  order: 3;
+}
+.demo-card:nth-child(6) {
+  order: 7;
+}
+.demo-card:nth-child(7) {
+  order: 4;
+}
+.demo-card:nth-child(8) {
+  order: 8;
+}
+
+      /* Border Box */
+      * {
+      box-sizing: border-box;
+      }
+      /* Fonts */
+      body {
+      font-family: Roboto;
+      }
+      #timeline {
+      padding: 100px 0;
+      background: #f7f7f7;
+      border-top: 1px solid rgba(191, 191, 191, 0.4);
+      border-bottom: 1px solid rgba(191, 191, 191, 0.4);
+      }
+      #timeline h1 {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 200;
+      margin-bottom: 20px;
+      }
+      #timeline p.leader {
+      text-align: center;
+      max-width: 90%;
+      margin: auto;
+      margin-bottom: 45px;
+      }
+      #timeline .demo-card-wrapper {
+      position: relative;
+      margin: auto;
+      }
+      @media (min-width: 1000px) {
+      #timeline .demo-card-wrapper {
+      display: flex;
+      flex-flow: column wrap;
+      width: 1170px;
+      height: 2150px;
+      margin: 0 auto;
+      }
+      }
+      #timeline .demo-card-wrapper::after {
+      z-index: 1;
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      border-left: 1px solid rgba(191, 191, 191, 0.4);
+      }
+      @media (min-width: 1000px) {
+      #timeline .demo-card-wrapper::after {
+      border-left: 1px solid #bdbdbd;
+      }
+      }
+      #timeline .demo-card {
+      position: relative;
+      display: block;
+      margin: 10px auto 80px;
+      max-width: 94%;
+      z-index: 2;
+      }
+      @media (min-width: 480px) {
+      #timeline .demo-card {
+      max-width: 60%;
+      box-shadow: 0px 1px 22px 4px rgba(0, 0, 0, 0.07);
+      }
+      }
+      @media (min-width: 720px) {
+      #timeline .demo-card {
+      max-width: 40%;
+      }
+      }
+      @media (min-width: 1000px) {
+      #timeline .demo-card {
+      max-width: 450px;
+      height: 400px;
+      margin: 90px;
+      margin-top: 45px;
+      margin-bottom: 45px;
+      }
+      #timeline .demo-card:nth-child(odd) {
+      margin-right: 45px;
+      }
+      #timeline .demo-card:nth-child(odd) .head::after {
+      border-left-width: 15px;
+      border-left-style: solid;
+      left: 100%;
+      }
+      #timeline .demo-card:nth-child(odd) .head::before {
+      left: 491.5px;
+      }
+      #timeline .demo-card:nth-child(even) {
+      margin-left: 45px;
+      }
+      #timeline .demo-card:nth-child(even) .head::after {
+      border-right-width: 15px;
+      border-right-style: solid;
+      right: 100%;
+      }
+      #timeline .demo-card:nth-child(even) .head::before {
+      right: 489.5px;
+      }
+      #timeline .demo-card:nth-child(2) {
+      margin-top: 180px;
+      }
+      }
+      #timeline .demo-card .head {
+      position: relative;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      font-weight: 400;
+      }
+      #timeline .demo-card .head .number-box {
+      display: inline;
+      float: left;
+      margin: 15px;
+      padding: 10px;
+      font-size: 35px;
+      line-height: 35px;
+      font-weight: 600;
+      background: rgba(0, 0, 0, 0.17);
+      }
+      #timeline .demo-card .head h2 {
+      text-transform: uppercase;
+      font-size: 1.3rem;
+      font-weight: inherit;
+      letter-spacing: 2px;
+      margin: 0;
+      padding-bottom: 6px;
+      line-height: 1rem;
+      }
+      @media (min-width: 480px) {
+      #timeline .demo-card .head h2 {
+      font-size: 165%;
+      line-height: 1.2rem;
+      }
+      }
+      #timeline .demo-card .head h2 span {
+      display: block;
+      font-size: 0.6rem;
+      margin: 0;
+      }
+      @media (min-width: 480px) {
+      #timeline .demo-card .head h2 span {
+      font-size: 0.8rem;
+      }
+      }
+      #timeline .demo-card .body {
+      background: #fff;
+      border: 1px solid rgba(191, 191, 191, 0.4);
+      border-top: 0;
+      padding: 15px;
+      }
+      @media (min-width: 1000px) {
+      #timeline .demo-card .body {
+      height: 315px;
+      }
+      }
+      #timeline .demo-card .body p {
+      font-size: 14px;
+      line-height: 18px;
+      margin-bottom: 15px;
+      }
+      #timeline .demo-card .body img {
+      display: block;
+      width: 100%;
+      }
+      #timeline .demo-card--step1 {
+      background-color: #46b8e9;
+      }
+      #timeline .demo-card--step1 .head::after {
+      border-color: #46b8e9;
+      }
+      #timeline .demo-card--step2 {
+      background-color: #3ee9d1;
+      }
+      #timeline .demo-card--step2 .head::after {
+      border-color: #3ee9d1;
+      }
+      #timeline .demo-card--step3 {
+      background-color: #ce43eb;
+      }
+      #timeline .demo-card--step3 .head::after {
+      border-color: #ce43eb;
+      }
+      #timeline .demo-card--step4 {
+      background-color: #4d92eb;
+      }
+      #timeline .demo-card--step4 .head::after {
+      border-color: #4d92eb;
+      }
+      #timeline .demo-card--step5 {
+      background-color: #3ee9d1;
+      }
+      #timeline .demo-card--step5 .head::after {
+      border-color: #3ee9d1;
+      }
+      #timeline .demo-card--step6 {
+      background-color: #ce43eb;
+      }
+      #timeline .demo-card--step6 .head::after {
+      border-color: #ce43eb;
+      }#timeline .demo-card--step7 {
+      background-color: #4d92eb;
+      }
+      #timeline .demo-card--step7 .head::after {
+      border-color: #4d92eb;
+      }#timeline .demo-card--step8 {
+      background-color: #3ee9d1;
+      }
+      #timeline .demo-card--step8 .head::after {
+      border-color: #3ee9d1;
+      }
+      a:hover {
+  cursor: pointer;
+      }
+      :root { scroll-behavior: smooth; }
+      .stt {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: rgb(128, 128, 255) url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath fill='currentColor' d='M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z'%3E%3C/path%3E%3C/svg%3E") center no-repeat;
+  box-shadow: 0 0.25rem 0.5rem 0 gray;
+  opacity: 0.7;
+}
+.stt:hover {
+  opacity: 0.8;
+}
+.stt:focus {
+  opacity: 0.9;
+}
+.stt:active {
+  opacity: 1;
+}
+      /* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: red;
+}
+
+/* mouse over link */
+a:hover {
+  color: blue;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+   </style>
+   <header>
+      <h1>Image Place holder</h1>
+   </header>
+   <body>
+      <section id=timeline>
+         <div class="demo-card-wrapper">
+            <div class="demo-card demo-card--step1">
+               <div class="head">
+                  <div class="number-box">
+                     <span>01</span>
+                  </div>
+                  <h2>Report</h2>
+               </div>
+               <div class="body">
+                  <p>You have the option to send reputable fact-checking organizations (International Fact-Checking Network (IFCN) signatories) in India about potential misinformation through WhatsApp. These organizations can then respond by sending you a fact-checking article.
+                  </p>
+                  <p>
+                     <a class="bodylinks" style="color: black;" href="https://wa.me/917700906111" target=_blank> Boom Live </a> 
+                     <br><br><a class="bodylinks" style="color: black;" href="https://wa.me/919643651818" target=_blank> Quint WebQoof </a>
+                     <br><br><a class="bodylinks" style="color: black;" href="https://wa.me/919819888887" target=_blank> Times Verified </a>
+                     <br><br><a class="bodylinks" style="color: black;" href="https://wa.me/917600011160" target=_blank> Alt News </a>
+                     <br><br><a class="bodylinks" style="color: black;" href="https://wa.me/917370007000" target=_blank> India Today </a>
+                     <br><br><a class="bodylinks" style="color: black;" href="(https://api.whatsapp.com/send?phone=916369748351&text=Hi%20You%20Turn!) 
+                        " target=_blank>YouTurn (Tamil)</a>
+                  </p>
+               </div>
+            </div>
+            <div class="demo-card demo-card--step2">
+               <div class="head">
+                  <div class="number-box">
+                     <span>02</span>
+                  </div>
+                  <h2>Fact Check</h2>
+               </div>
+               <div class="body">
+                  <p><b>Do it yourself fact-check</b>
+                     <br>
+                     When using <a style="color: black" href="https://toolbox.google.com/factcheck/explorer/search" target="_blank">Google's Fact Check Explorer</a> to search for a topic, you can easily find fact checks conducted by independent organizations from around the world. 
+                     <br><br>
+                     <b>Fact-Checking Organizations in India</b>
+                     <br>
+                     Below are some of the established fact-checking organizations in India where you can perform a fact-check easily through their webportal:
+                     <br><a style="color: black" href="https://www.boomlive.in/fact-check" target="_blank">Boom Live</a>
+                     <br><a style="color: black" href="https://factcheck.afp.com/afp-india" target="_blank">AFP</a>
+                     <br><a style="color: black" href="https://factly.in/category/english/" target="_blank">Factly</a>
+                     <br><a style="color: black" href="https://www.thequint.com/news/webqoof" target="_blank">Quint WebQoof</a>
+                     <br><a style="color: black" href="https://www.altnews.in/" target="_blank">Alt News</a>
+                     <br><a style="color: black" href="https://www.indiatoday.in/fact-check" target="_blank">India Today</a>
+                     <br><a style="color: black" href="https://youturn.in/" target="_blank">YouTurn (Tamil)</a>
+                     <br>
+                  </p>
+               </div>
+            </div>
+            <div class="demo-card demo-card--step3">
+               <div class="head">
+                  <div class="number-box">
+                     <span>03</span>
+                  </div>
+                  <h2>Harmful Content</h2>
+               </div>
+               <div class="body">
+                  <p>
+                     You can submit reports on specific platforms, about the following harms: 
+                  <ul>
+                     <li> Threats </li>
+                     <li> Impersonation </li>
+                     <li> Bullying & Harassment  </li>
+                     <li> Self-harm or Suicide   </li>
+                     <li> Online Abuse Violent Content </li>
+                     <li> Unwanted Sexual Advances </li>
+                     <li> Pornographic Content </li>
+                  </ul>
+                  <br><a style="color: black" href="https://reportharmfulcontent.com/report/where-is-the-content-posted/facebook/no/" target="_blank">Facebook</a>
+                  <a style="color: black" href="https://reportharmfulcontent.com/report/where-is-the-content-posted/instagram/no/" target="_blank">Instagram</a>
+                  <br><a style="color: black" href="https://reportharmfulcontent.com/report/where-is-the-content-posted/snapchat/no/" target="_blank">SnapChat</a>
+                  <a style="color: black" href="https://reportharmfulcontent.com/report/where-is-the-content-posted/twitter/no/" target="_blank">X(Formerly Twitter)</a>
+                  <br><a style="color: black" href="https://reportharmfulcontent.com/report/where-is-the-content-posted/youtube/no/" target="_blank">YouTube</a>
+                  <a style="color: black" href="https://reportharmfulcontent.com/report/where-is-the-content-posted/linkedin/no/target=" tagert="_blank">LinkedIn</a>
+                  <br><a style="color: black" href="https://reportharmfulcontent.com/report/where-is-the-content-posted/google-search/no/" target="_blank">Google</a>
+                  <a style="color: black" href="https://reportharmfulcontent.com/report/where-is-the-content-posted/tinder/no/" target="_blank">Tinder</a>
+                  <br><a style="color: black" href="https://reportharmfulcontent.com/report/where-is-the-content-posted/hinge/no/graphic-content/" target="_blank">Hinge</a>
+                  <a style="color: black" href="https://reportharmfulcontent.com/report/where-is-the-content-posted/have-you-reported-it-to-pinterest/please-find-links-below-to-pinterest-s-community-guidelines-and-how-to-report-content/" target="_blank">Pinterest</a>
+                  </p>
+               </div>
+            </div>
+            <div class="demo-card demo-card--step4">
+               <div class="head">
+                  <div class="number-box">
+                     <span>04</span>
+                  </div>
+                  <h2>Cyber Crime</h2>
+               </div>
+               <div class="body">
+                  <p> For any form of online distress/harassment on social media platforms, economic fraud, matrimonial fraud, online loan scam, job fraud or in case of online sexual abuse or harassment, report here: <br>visit <a href='https://cybercrime.gov.in' target="_blank">Cyber Crime Website</a>  or call <a href="tel:1950" target=_blank>1930</a>.
+                     <br> If you receive obscene, threatening content (photos, pictures, abusive words) through messages, emails, or on social networking profiles, or if you want to report a fake account or a hacked account, please reach out to Cyber Wellness Helpline +91 7353107353 or visit the website to fill <a href="https://responsiblenetism.org/learn-to-report/" target="_blank">form</a>.
+                  </p>
+               </div>
+            </div>
+            <div class="demo-card demo-card--step5">
+               <div class="head">
+                  <div class="number-box">
+                     <span>05</span>
+                  </div>
+                  <h2>DeepFake</h2>
+               </div>
+               <div class="body">
+                  <p>                     
+                  <ul>
+                     <li>
+                        <a href="https://stopncii.org/" target="_blank">StopNCII.org</a> is a free tool designed to support victims of Non-Consensual Intimate Image (NCII) abuse (Above 18)<br><a href="https://stopncii.org/how-it-works/ " target="_blank">Click here to see How it works</a>
+                     </li>
+                     <br>
+                     <li>
+                        <a href="https://takeitdown.ncmec.org/" target="_blank">Take it down (Under 18) </a>service is one step you can take to help remove online nude, partially nude, or sexually explicit photos and videos taken before you were 18. 
+                     </li>
+                  </ul>
+                  </p>                            
+               </div>
+            </div>
+            <div class="demo-card demo-card--step6">
+               <div class="head">
+                  <div class="number-box">
+                     <span>06</span>
+                  </div>
+                  <h2>Adult Sites</h2>
+               </div>
+               <div class="body">
+                  <p>
+                     <b>Non-consensual sharing of intimate images and videos</b>
+                     <br>If you prefer to report non-consensually uploaded personal images and videos yourself, you can find some content takedown forms below. These are the sites where we see the most content being shared. Most sites will have a route to report content for removal. Look for a heading at the top called 'support' or in the footer of the website called ‘content removal’ or ‘contact us’; they should provide an email address or have a contact form.
+                     <br><br>VPN connection may be required, as these domains are blocked in India
+                     <br><a style="color: black" href="https://www.pornhub.com/content-removal" target="_blank">Pornhub Content Removal</a>
+                     <br><a style="color: black" href="https://xhamster.com/info/contact" target="_blank">Contact Xhamster</a>
+                     <br><a style="color: black" href="https://info.xvideos.com/takedown" target="_blank">Xvideos Content Removal</a>
+                     <br><a style="color: black" href="https://info.xnxx.com/contact" target="_blank">Contact Xnxx</a>
+                  </p>
+               </div>
+            </div>
+            <div class="demo-card demo-card--step7">
+               <div class="head">
+                  <div class="number-box">
+                     <span>07</span>
+                  </div>
+                  <h2>Educate Self</h2>
+               </div>
+               <div class="body">
+                  <p>
+                    <ol style ="color: red;">
+                        <li><a href="https://fakeless.org/wp-content/uploads/2023/08/How-our-braine-works_CURVES_132x84cm_RGB_english-2.pdf " target="_blank">How our brain reacts to misinformation</a>
+                        </li>
+                        <li><a href="https://newslit.org/wp-content/uploads/2023/12/Breaking-News_Infographic_FINAL.pdf" target="_blank">Breaking news checklist</a>
+                        </li>
+                        <li><a href="https://www.washingtonpost.com/technology/2023/05/22/misinformation-ai-twitter-facebook-guide/" target="_blank">How to avoid falling for misinformation, AI images on social media</a>
+                        </li>
+                        <li><a href="https://newslit.org/wp-content/uploads/2022/12/IsItLegit_infographic.pdf" target="_blank">Five steps for vetting a news source</a>
+                        </li>
+                        <li><a href="https://fakeless.org/wp-content/uploads/2023/08/10persones_curves_rgb_English.pdf " target="_blank">10 characteristics of misinformation</a>
+                        </li>
+                        <li><a href="https://drive.google.com/file/d/12uzzxH1FoaSDKGImN8tP3P_Uh8aDwJm5/view?usp=sharing" target="_blank">How to stay protected against AI voice cloning scams</a>
+                        </li>
+                    </ol>
+                     </p>
+               </div>
+            </div>
+            <div class="demo-card demo-card--step8">
+               <div class="head">
+                  <div class="number-box">
+                     <span>08</span>
+                  </div>
+                  <h2>Privacy Tools</h2>
+               </div>
+               <div class="body">
+                  <p>
+                     Find and privacy-respecting alternatives to popular software and services - <a href="https://awesome-privacy.xyz/" target="_blank">Click Here</a> 
+                     <br>Checklist and guide to securing your digital life and protecting your privacy - <a href="https://digital-defense.io/checklist/  target="_blank">Click Here</a>
+                     <br>Check if your email address is in a data breach - <a href="https://haveibeenpwned.com/  target="_blank">Click Here</a>
+                     <br>Secure email, vpn, password manager - <a href="https://proton.me/" target="_blank">Click Here</a>
+                  </p>
+               </div>
+            </div>
+         </div>
+      </section>
+     
+
+        <a class=scrollToTop href=#top><img class="stt" alt="Scroll Up" src=arrow-up.jpg></a>
+          </body>
+   <footer>
+      <p align= "center" style="font-size:12px;font-family: Arial, Helvetica, sans-serif;"> This microsite is made by <a href="https://www.tedxnapierbridge.com/" target="_blank">TEDxNapier Bridge </a>- Follow us <a href="https://www.instagram.com/tedxnapier/" target="_blank">Instagram</a> & <a href="https://twitter.com/tedxnapier" target="_blank">X (formerly Twitter)</a> for more information and upcoming ideas. </p>
+   </footer>
+   <script>
+    //Check to see if the window is top if not then display button
+$(document ).ready(function() {
+                $('.scrollToTop').hide();
+$(window).scroll(function(){
+    if ($(this).scrollTop() > 40) {
+        $('.scrollToTop').fadeIn();
+    } else {
+        $('.scrollToTop').fadeOut();
+    }
+});	
+});
+    $("a[href='#top']").click(function() {
+     $("html, body").animate({ scrollTop: 0 }, "slow");
+     return false;
+     });</script>
+
+</html>
